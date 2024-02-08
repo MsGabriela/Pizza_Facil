@@ -1,0 +1,12 @@
+Essa camada é responsável pelo banco de dados,
+e nao preciso dizer mais nada rsrs
+
+
+Nesta camada conterá as pastas:
+- Context
+- Repositories
+
+
+Caso for utilizado Entity Framework Core, adicionaremos + 1
+pasta , que chamará EntitiesConfiguration, onde configuramos 
+o Fluent API das entidades do contexto

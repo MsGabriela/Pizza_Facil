@@ -1,0 +1,6 @@
+Nesta camada conterá um conteiner de injeçao de dependencia
+Aqui configuramos as injecoes de dependencias
+
+so existira um arquivo Class library 
+chamada DependencyInjection para adicionar e configurar 
+os servicos entre camadas

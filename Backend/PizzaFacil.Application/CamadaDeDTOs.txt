@@ -1,0 +1,17 @@
+Esta camada serve para implementar os casos de usos que foram fornecidos na Domain. 
+Aqui poderá ser incluido mapeamento da Entities para um ou mais modelos de visualização (ModelsViews ou EntitiesViews)
+
+A Camada de Application fará referencia a camada Domain. 
+Ele não sabe nada de bancos de dados, serviços da web, etc. 
+No entanto, define interfaces (por exemplo, IContatoRepository, IContatoService, IMessageBus),
+que são implementadas pela camada de infraestrutura.
+
+A validação também vai para esta camada.
+
+Na Application serão criadas as pastas:
+- DTOS/ View Models
+- Mappers
+- Interfaces da camada Application
+- Services
+
+
