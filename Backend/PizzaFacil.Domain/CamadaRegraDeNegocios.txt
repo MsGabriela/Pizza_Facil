@@ -1,0 +1,14 @@
+Camada Domain ficará responsável pelas regras de negócio. Aqui deve conter todos os casos de uso da aplicação.
+Todos os projetos definidos neste projeto devem depender dessa camada.
+
+Nesta camada conterá as pastas:
+- Entities; 
+- Interfaces;
+- Validation;
+
+
+* Caso necessário da criação de (Enums, Aggregates(DDD), Value Objects,Exceptions)  deverão ser criadas nessa camada!
+
+
+
+
