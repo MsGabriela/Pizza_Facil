@@ -15,3 +15,4 @@ namespace PizzaFacil.Domain.Models
         public List<Cardapio> Pizzas { get; set; }
     }
 }
+
