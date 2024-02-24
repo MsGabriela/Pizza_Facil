@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaFacil.Infra.Data.Context;
 
@@ -10,9 +11,11 @@ using PizzaFacil.Infra.Data.Context;
 namespace PizzaFacil.Infra.Data.Migrations
 {
     [DbContext(typeof(PizzaFacilDbContext))]
-    partial class PizzaFacilDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240224172517_TabelaItensAdicionais")]
+    partial class TabelaItensAdicionais
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,7 +144,7 @@ namespace PizzaFacil.Infra.Data.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.ToTable("ItensPedido", (string)null);
+                    b.ToTable("ItensPedido");
                 });
 
             modelBuilder.Entity("PizzaFacil.Domain.Entities.MetodoPagamento", b =>

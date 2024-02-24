@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaFacil.Infra.Data.Context;
 
@@ -10,9 +11,11 @@ using PizzaFacil.Infra.Data.Context;
 namespace PizzaFacil.Infra.Data.Migrations
 {
     [DbContext(typeof(PizzaFacilDbContext))]
-    partial class PizzaFacilDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240224171911_TabelaItensPedido")]
+    partial class TabelaItensPedido
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +66,6 @@ namespace PizzaFacil.Infra.Data.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("varchar(50)");
 
                     b.Property<decimal>("Valor")
@@ -72,41 +74,6 @@ namespace PizzaFacil.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CardapioAdicionais", (string)null);
-                });
-
-            modelBuilder.Entity("PizzaFacil.Domain.Entities.ItensAdicionais", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<Guid>("CardapioAdicionalId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<Guid>("ItemPedidoId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<decimal>("ValorDoAdicional")
-                        .HasColumnType("decimal(5,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CardapioAdicionalId");
-
-                    b.HasIndex("ItemPedidoId");
-
-                    b.ToTable("ItensAdicionais", (string)null);
                 });
 
             modelBuilder.Entity("PizzaFacil.Domain.Entities.ItensPedido", b =>
@@ -141,7 +108,7 @@ namespace PizzaFacil.Infra.Data.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.ToTable("ItensPedido", (string)null);
+                    b.ToTable("ItensPedido");
                 });
 
             modelBuilder.Entity("PizzaFacil.Domain.Entities.MetodoPagamento", b =>
@@ -258,23 +225,6 @@ namespace PizzaFacil.Infra.Data.Migrations
                     b.Navigation("Categoria");
                 });
 
-            modelBuilder.Entity("PizzaFacil.Domain.Entities.ItensAdicionais", b =>
-                {
-                    b.HasOne("PizzaFacil.Domain.Entities.CardapioAdicionais", "CardapioAdicional")
-                        .WithMany("ItensAdicionais")
-                        .HasForeignKey("CardapioAdicionalId")
-                        .IsRequired();
-
-                    b.HasOne("PizzaFacil.Domain.Entities.ItensPedido", "ItemPedido")
-                        .WithMany("ItensAdicionais")
-                        .HasForeignKey("ItemPedidoId")
-                        .IsRequired();
-
-                    b.Navigation("CardapioAdicional");
-
-                    b.Navigation("ItemPedido");
-                });
-
             modelBuilder.Entity("PizzaFacil.Domain.Entities.ItensPedido", b =>
                 {
                     b.HasOne("PizzaFacil.Domain.Entities.Cardapio", "Cardapio")
@@ -312,16 +262,6 @@ namespace PizzaFacil.Infra.Data.Migrations
             modelBuilder.Entity("PizzaFacil.Domain.Entities.Cardapio", b =>
                 {
                     b.Navigation("ItensPedido");
-                });
-
-            modelBuilder.Entity("PizzaFacil.Domain.Entities.CardapioAdicionais", b =>
-                {
-                    b.Navigation("ItensAdicionais");
-                });
-
-            modelBuilder.Entity("PizzaFacil.Domain.Entities.ItensPedido", b =>
-                {
-                    b.Navigation("ItensAdicionais");
                 });
 
             modelBuilder.Entity("PizzaFacil.Domain.Entities.MetodoPagamento", b =>

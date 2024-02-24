@@ -7,20 +7,17 @@ using System.Threading.Tasks;
 
 namespace PizzaFacil.Domain.Entities
 {
-    public class Cardapio : Entity
+    public class CardapioAdicionais : Entity
     {
-        public Cardapio()
+        public CardapioAdicionais()
         {
             
         }
 
-        public Guid CategoriaId { get; private set; }
-
         public string Nome { get; private set; }
         public decimal Valor { get; private set; }
 
-        /*EF Relation*/
-        public Categoria Categoria { get; private set; }
-        public List<ItensPedido> ItensPedido { get; private set; }
+        /*EF Relations*/
+        public List<ItensAdicionais> ItensAdicionais { get; private set; }
     }
 }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace PizzaFacil.Infra.Data.Mappings
 {
-    public class CardapioMapping : IEntityTypeConfiguration<Cardapio>
+    public class CardapioAdicionaisMapping : IEntityTypeConfiguration<CardapioAdicionais>
     {
-        public void Configure(EntityTypeBuilder<Cardapio> builder)
+        public void Configure(EntityTypeBuilder<CardapioAdicionais> builder)
         {
             builder.HasKey(c => c.Id);
 
@@ -23,10 +23,7 @@ namespace PizzaFacil.Infra.Data.Mappings
                 .HasColumnType("decimal(5,2)")
                 .IsRequired();
 
-            builder.HasOne(cat => cat.Categoria)
-                .WithMany(c => c.Pizzas);
-
-            builder.ToTable("Cardapio");
+            builder.ToTable("CardapioAdicionais");
         }
     }
 }

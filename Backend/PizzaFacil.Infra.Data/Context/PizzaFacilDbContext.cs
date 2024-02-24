@@ -10,6 +10,12 @@ namespace PizzaFacil.Infra.Data.Context
 
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Cardapio> Cardapio { get; set; }
+        public DbSet<CardapioAdicionais> CardapioAdicionais { get; set; }
+        public DbSet<ItensAdicionais> ItensAdicionais { get; set; }
+        public DbSet<ItensPedido> ItensPedido { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+        public DbSet<StatusPedido> StatusPedido { get; set; }
+        public DbSet<MetodoPagamento> MetodoPagamento { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +38,7 @@ namespace PizzaFacil.Infra.Data.Context
                 if (entry.State == EntityState.Added)
                 {
                     entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                    entry.Property("Ativo").CurrentValue = true;
                 }
 
                 if (entry.State == EntityState.Modified)

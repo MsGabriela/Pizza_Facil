@@ -9,10 +9,10 @@ namespace PizzaFacil.Domain.Models
 {
     public class Categoria : Entity
     {
-        public string Nome { get; set; }
+        public string Nome { get; private set; }
 
         /*EF Relations*/
-        public List<Cardapio> Pizzas { get; set; }
+        public List<Cardapio> Pizzas { get; private set; }
     }
 }
 
