@@ -1,0 +1,69 @@
+{
+  "pedidos": [
+    {
+      "idPedido": 1,
+      "nomeCliente": "Brenno",
+      "telefone": "(11) 98168-9500",
+      "endereco": "Rua Bom Pastor, 233",
+      "itens": [
+        {
+          "qtd": 1,
+          "item": "Pizza Portuguesa",
+          "valor": 60.00
+        },
+        {
+          "qtd": 1,
+          "item": "Pizza Napolitana",
+          "valor": 63.00
+        },
+        {
+          "qtd": 1,
+          "item": "Pizza Calabreza",
+          "valor": 62.00
+        }
+      ],
+      "data": "2024-01-02",
+      "valorTotal": 185.00
+    },
+    {
+      "idPedido": 2,
+      "nomeCliente": "Nicolas",
+      "telefone": "(11) 11111-1111",
+      "endereco": "Rua Sincora, 518",
+      "itens": [
+        {
+          "qtd": 1,
+          "item": "Pizza Marguerita",
+          "valor": 60.00
+        },
+        {
+          "qtd": 1,
+          "item": "Pizza Aliboni",
+          "valor": 63.00
+        }
+      ],
+      "data": "2024-01-10",
+      "valorTotal": 123.00
+    },
+    {
+      "idPedido": 3,
+      "nomeCliente": "Eduardo",
+      "telefone": "(11) 11111-1111",
+      "endereco": "Rua Filadelfia, 38",
+      "itens": [
+        {
+          "qtd": 1,
+          "item": "Pizza Marguerita",
+          "valor": 60.00
+        },
+        {
+          "qtd": 1,
+          "item": "Pizza Aliboni",
+          "valor": 63.00
+        }
+      ],
+      "data": "2024-01-26",
+      "valorTotal": 123.00
+    }
+  ]
+}
