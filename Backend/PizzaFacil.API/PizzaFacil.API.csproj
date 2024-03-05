@@ -19,11 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PizzaFacil.Infra.Data\PizzaFacil.Infra.Data.csproj" />
+    <ProjectReference Include="..\PizzaFacil.Infra.Ioc\PizzaFacil.Infra.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

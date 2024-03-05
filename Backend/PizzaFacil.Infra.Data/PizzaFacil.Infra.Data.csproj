@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--<Compile Remove="Migrations\**" />
-    <Compile Remove="Repositories\**" />
-    <EmbeddedResource Remove="Migrations\**" />
-    <EmbeddedResource Remove="Repositories\**" />
-    <None Remove="Migrations\**" />
-    <None Remove="Repositories\**" />-->
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
@@ -26,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PizzaFacil.Application\PizzaFacil.Application.csproj" />
     <ProjectReference Include="..\PizzaFacil.Domain\PizzaFacil.Domain.csproj" />
   </ItemGroup>
 

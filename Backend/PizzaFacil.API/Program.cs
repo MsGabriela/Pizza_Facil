@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PizzaFacil.API.Configurations;
+using PizzaFacil.Application;
 using PizzaFacil.Infra.Data.Context;
+using PizzaFacil.Infra.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +13,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.ResolveDependencies();
+DependencyInjection.ResolveDependencies(builder.Services);
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 builder.Services.AddDbContext<PizzaFacilDbContext>(options =>
 {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.Configure<ApiBehaviorOptions>(options => //Desabilitando a validação automática da Dto
+{
+    options.SuppressModelStateInvalidFilter = true;
 });
 
 var app = builder.Build();
